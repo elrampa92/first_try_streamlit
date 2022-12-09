@@ -5,7 +5,7 @@ st.write("PROVA RPE")
 
 from PIL import Image
 image = Image.open("https://github.com/elrampa92/first_try_streamlit/blob/3f023c9ae83765254772d058c2fa1615add9b696/VFC_LOGO.png")
-st.image(image, width=2)
+st.image(image)
 
 number = st.number_input('Insert a number')
 st.write('The current number is ', number)
