@@ -20,7 +20,7 @@ t_date = today.strftime("%d/%m/%Y")
 
 st.title("RPE PAGE")
 from PIL import Image
-image = Image.open('https://github.com/elrampa92/first_try_streamlit/blob/360fa3984982b091bbf19e32df7a3844602555b5/VFC_LOGO.png?raw=true')
+image = Image.open('https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/2022_Venezia_FC_logo.svg/800px-2022_Venezia_FC_logo.svg.png')
 st.image(image, width=130)
 st.text("Insert your RPE value")
 
