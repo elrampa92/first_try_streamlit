@@ -10,7 +10,7 @@ t_date = today.strftime("%d/%m/%Y")
 
 #df_excel = pd.DataFrame(columns=['Player', 'Data', 'RPE'])
 
-os.makedirs('/Users/elrampa/Desktop/prova_streamlit/data', exist_ok=True)
+#os.makedirs('/Users/elrampa/Desktop/prova_streamlit/data', exist_ok=True)
 #df_excel.to_excel('/Users/elrampa/Desktop/prova_streamlit/data/DF_RPE.xlsx', index = False)
 
 
@@ -20,7 +20,7 @@ os.makedirs('/Users/elrampa/Desktop/prova_streamlit/data', exist_ok=True)
 
 st.title("RPE PAGE")
 from PIL import Image
-image = Image.open('/Users/elrampa/Desktop/prova_streamlit/VFC_LOGO.png')
+image = Image.open('https://github.com/elrampa92/first_try_streamlit/blob/360fa3984982b091bbf19e32df7a3844602555b5/VFC_LOGO.png')
 st.image(image, width=130)
 st.text("Insert your RPE value")
 
