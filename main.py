@@ -20,8 +20,8 @@ t_date = today.strftime("%d/%m/%Y")
 
 st.title("RPE PAGE")
 from PIL import Image
-image = Image.open('https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/2022_Venezia_FC_logo.svg/800px-2022_Venezia_FC_logo.svg.png')
-st.image(image, width=130)
+#image = Image.open('https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/2022_Venezia_FC_logo.svg/800px-2022_Venezia_FC_logo.svg.png')
+#st.image(image, width=130)
 st.text("Insert your RPE value")
 
 
@@ -55,9 +55,9 @@ if b_confirm:
     #st.write(sel_player,"- RPE:", rpe,"during ",sel_session," session on", sel_date)
     new_row = {'Player':sel_player, 'Data':f'{sel_date} - {sel_session}', 'RPE':rpe}
     #st.write(new_row)
-    df_rpe = pd.read_excel('/Users/elrampa/Desktop/prova_streamlit/data/DF_RPE.xlsx')
+    df_rpe = pd.read_excel('https://github.com/elrampa92/first_try_streamlit/blob/main/DF_RPE.xlsx?raw=true')
     df_rpe = df_rpe.append(new_row, ignore_index=True)
-    df_rpe.to_excel('/Users/elrampa/Desktop/prova_streamlit/data/DF_RPE.xlsx', index = False)
+    df_rpe.to_excel('https://github.com/elrampa92/first_try_streamlit/blob/main/DF_RPE.xlsx?raw=true', index = False)
     #df_RPE = pd.read_csv('/Users/elrampa/Desktop/prova_streamlit/data/DF_RPE.csv')
     #df_RPE = df_RPE.append(new_row, ignore_index=True)
     #df_RPE.to_csv('/Users/elrampa/Desktop/prova_streamlit/data/DF_RPE.csv', index = False)
