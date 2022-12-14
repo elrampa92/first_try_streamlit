@@ -2,11 +2,18 @@ import streamlit as st
 import pandas as pd
 from datetime import date
 import os
-
+import requests
 
 today = date.today()
 # dd/mm/YY
 t_date = today.strftime("%d/%m/%Y")
+
+url = "https://raw.githubusercontent.com/elrampa92/first_try_streamlit/main/db_RPE.csv" # Make sure the url is the raw version of the file on GitHub
+download = requests.get(url).content
+
+# Reading the downloaded content and turning it into a pandas dataframe
+
+df = pd.read_csv(io.StringIO(download.decode('utf-8')))
 
 #df_excel = pd.DataFrame(columns=['Player', 'Data', 'RPE'])
 
@@ -55,13 +62,13 @@ if b_confirm:
     #st.write(sel_player,"- RPE:", rpe,"during ",sel_session," session on", sel_date)
     new_row = {'Player':sel_player, 'Data':f'{sel_date} - {sel_session}', 'RPE':rpe}
     #st.write(new_row)
-    df_rpe = pd.read_excel('https://github.com/elrampa92/first_try_streamlit/blob/main/DF_RPE.xlsx?raw=true')
-    df_rpe = df_rpe.append(new_row, ignore_index=True)
-    df_rpe.to_excel('https://github.com/elrampa92/first_try_streamlit/blob/main/DF_RPE.xlsx?raw=true', index = False)
-    #df_RPE = pd.read_csv('/Users/elrampa/Desktop/prova_streamlit/data/DF_RPE.csv')
-    #df_RPE = df_RPE.append(new_row, ignore_index=True)
-    #df_RPE.to_csv('/Users/elrampa/Desktop/prova_streamlit/data/DF_RPE.csv', index = False)
-    #st.write(df_RPE)
+    #df_rpe = pd.read_excel('https://github.com/elrampa92/first_try_streamlit/blob/main/DF_RPE.xlsx?raw=true')
+    #df_rpe = df_rpe.append(new_row, ignore_index=True)
+    #df_rpe.to_excel('https://github.com/elrampa92/first_try_streamlit/blob/main/DF_RPE.xlsx?raw=true', index = False)
+    df_RPE = pd.read_csv(url)
+    df_RPE = df_RPE.append(new_row, ignore_index=True)
+    df_RPE.to_csv(url, index = False)
+    st.write(df_RPE)
 
 
 
