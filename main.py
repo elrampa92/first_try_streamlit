@@ -13,7 +13,7 @@ download = requests.get(url).content
 
 # Reading the downloaded content and turning it into a pandas dataframe
 
-df = pd.read_csv(io.StringIO(download.decode('utf-8')))
+#df = pd.read_csv(io.StringIO(download.decode('utf-8')))
 
 #df_excel = pd.DataFrame(columns=['Player', 'Data', 'RPE'])
 
