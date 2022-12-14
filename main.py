@@ -67,7 +67,7 @@ if b_confirm:
     #df_rpe.to_excel('https://github.com/elrampa92/first_try_streamlit/blob/main/DF_RPE.xlsx?raw=true', index = False)
     df_RPE = pd.read_csv(url)
     df_RPE = df_RPE.append(new_row, ignore_index=True)
-    df_RPE.to_csv(url, index = False)
+    df_RPE.to_csv('df_rpe2', index = False)
     st.write(df_RPE)
 
 
